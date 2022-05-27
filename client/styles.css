@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#initial-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#initial-display .instructions {
+    display: flex;
+    top: 30px;
+    left: 30px;
+    border: 1px solid black;
+    width: 300px;
+    height: 150px;
+    position: absolute;
+}
+
+#initial-display .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+#initial-display .main-commands {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 550px;
+    height: 350px;
+}
+
+.microphone {
+    border: 1px solid black;
+    width: 120px;
+    height: 120px;
+    border-radius: 120px;
+    margin-bottom: 60px;
+}
+
+#initial-display .registration-commands {
+    display: flex;
+    justify-content: center;
+    border: 1px solid tomato;
+    width: 100%;
+    /* height: px; */
+}
+
+.registration-commands .items {
+    display: flex;
+}
+
+.photo {
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+    margin: 0 10px 0 10px;
+}
+.video {
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+    margin: 0 10px 0 10px;
+}
+
+#on-play {
+    position: absolute;
+    right: 50%;
+    transform: translate(50%);
+    top: 20px;
+    display: flex;
+    border: 1px solid red;
+    width: 300px;
+    height: 50px;
+}
+
+#settings {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 600px;
+    height: 100%;
+    background-image: url("./public/modal.png");
+    transition: right, 1s;
+}
+
+.open {
+    right: 0px;
+}
+
+.close {
+    right: -520px;
+}
+
+#settings .open-close {
+    display: flex;
+}
+
+#settings img {
+    width: 40px;
+    margin-left: 30px;
+}
+
+#settings .main-settings {
+    display: flex;
+    flex-direction: column;
+
+    width: 450px;
+    height: 700px;
+    margin-left: 30px;
+}
+
+.main-settings .toggles {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    border: 1px solid orange;
+    height: 120px;
+}
+
+.main-settings .palettes {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    border: 1px solid orange;
+    height: 120px;
+}
+
+.main-settings .notes {
+    display: flex;
+    align-self: center;
+    margin-top: 30px;
+    /* border: 1px solid orange; */
+    width: 350px;
+    height: 350px;
+}
+
+#a {
+    position: relative;
+    border: 1px solid blueviolet;
+    width: 50px;
+    height: 50px;
+    top: 25px;
+    left: 150px;
+    border-radius: 50px;
+}
+
+#b {
+    position: relative;
+    border: 1px solid blueviolet;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    left: 200px;
+    top: 75px;
+    /* transform: translate(25px); */
+}
+
+#c {
+    position: relative;
+    border: 1px solid blueviolet;
+    width: 50px;
+    height: 50px;
+    left: 175px;
+    top: 175px;
+    /* transform: translate(25px); */
+    border-radius: 50px;
+}
+
+#d {
+    position: relative;
+    border: 1px solid blueviolet;
+    width: 50px;
+    height: 50px;
+    left: 50px;
+    top: 275px;
+    /* transform: translate(25px); */
+    border-radius: 50px;
+}
+
+#e {
+    position: relative;
+    border: 1px solid blueviolet;
+    width: 50px;
+    height: 50px;
+    left: -100px;
+    top: 275px;
+    border-radius: 50px;
+}
+
+#f {
+    position: relative;
+    border: 1px solid blueviolet;
+    width: 50px;
+    height: 50px;
+    left: -225px;
+    top: 175px;
+    border-radius: 50px;
+}
+
+#g {
+    position: relative;
+    border: 1px solid blueviolet;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    top: 75px;
+    left: -250px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}

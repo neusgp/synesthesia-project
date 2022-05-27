@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+        <script src="sketch.js"></script>
+    </head>
+    <body>
+        <section id="initial-display">
+            <div class="instructions"></div>
+            <div class="wrapper">
+                <div class="main-commands">
+                    <div class="microphone"></div>
+                    <div class="audio">
+                        <form>
+                            <input type="file" class="upload-file" />
+                            <button class="play">play</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="registration-commands">
+                <div class="items">
+                    <div class="photo"></div>
+                    <div class="video"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="on-play">
+            <div class="playing-commands">
+                <div class="playing-animation"></div>
+                <div class="pause"></div>
+                <div class="stop"></div>
+            </div>
+        </section>
+
+        <section id="settings" class="close">
+            <div class="open-close">
+                <img src="./public/settings.png" />
+            </div>
+            <div class="main-settings">
+                <div class="toggles">
+                    <p>Fade out <input type="checkbox" /></p>
+                    <p>Beat <input type="checkbox" /></p>
+                </div>
+                <div class="palettes">
+                    <p>Choose a Palette</p>
+                    <input type="multiple" />
+                </div>
+                <div class="notes">
+                    <div id="a"></div>
+                    <div id="b"></div>
+                    <div id="c"></div>
+                    <div id="d"></div>
+                    <div id="e"></div>
+                    <div id="f"></div>
+                    <div id="g"></div>
+                </div>
+            </div>
+        </section>
+        <footer>Neus Garcia 2022</footer>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
