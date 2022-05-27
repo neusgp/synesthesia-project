@@ -1,18 +1,15 @@
 (function () {
-    const micro = $(".microphone");
-    const openmodal = $(".open-close");
-    const settings = $("#settings");
+    const micro = document.querySelector(".microphone");
+    const openmodal = document.querySelector(".open-close");
+    const settings = document.querySelector("#settings");
 
-    micro.on("click", function () {
+    micro.addEventListener("click", function () {
         console.log("hey, I clicked to open the microphone!");
     });
 
-    openmodal.on("click", function () {
+    openmodal.addEventListener("click", function () {
         console.log("click to open settings");
-        if (settings.hasClass("close")) {
-            settings.removeClass("close").addClass("open");
-            return;
-        }
-        settings.removeClass("open").addClass("close");
+        settings.classList.toggle("close");
+        settings.classList.toggle("open");
     });
 })();
