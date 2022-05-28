@@ -212,18 +212,16 @@ body {
     height: 120px;
 }
 
-.main-settings .notes {
+.main-settings #notes {
     display: flex;
     align-self: center;
     margin-top: 30px;
-
     width: 350px;
     height: 350px;
 }
 
-#a {
+.a {
     position: relative;
-    border: 1px solid blueviolet;
     width: 50px;
     height: 50px;
     top: 25px;
@@ -231,9 +229,8 @@ body {
     border-radius: 50px;
 }
 
-#b {
+.b {
     position: relative;
-    border: 1px solid blueviolet;
     width: 50px;
     height: 50px;
     border-radius: 50px;
@@ -242,9 +239,8 @@ body {
     /* transform: translate(25px); */
 }
 
-#c {
+.c {
     position: relative;
-    border: 1px solid blueviolet;
     width: 50px;
     height: 50px;
     left: 175px;
@@ -253,9 +249,8 @@ body {
     border-radius: 50px;
 }
 
-#d {
+.d {
     position: relative;
-    border: 1px solid blueviolet;
     width: 50px;
     height: 50px;
     left: 50px;
@@ -264,9 +259,8 @@ body {
     border-radius: 50px;
 }
 
-#e {
+.e {
     position: relative;
-    border: 1px solid blueviolet;
     width: 50px;
     height: 50px;
     left: -100px;
@@ -274,9 +268,8 @@ body {
     border-radius: 50px;
 }
 
-#f {
+.f {
     position: relative;
-    border: 1px solid blueviolet;
     width: 50px;
     height: 50px;
     left: -225px;
@@ -284,9 +277,8 @@ body {
     border-radius: 50px;
 }
 
-#g {
+.g {
     position: relative;
-    border: 1px solid blueviolet;
     border-radius: 50px;
     width: 50px;
     height: 50px;

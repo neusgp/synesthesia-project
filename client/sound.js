@@ -62,20 +62,45 @@ function setup() {
 
     //Define the color pallet
     for (let i = 0; i < noteScale.length; i++) {
-        let newColor = color((i * 360) / noteScale.length, 50, 100, 0.8);
+        let newColor = color((i * 360) / noteScale.length, 60, 100, 1);
         colors.push(newColor);
     }
     console.log(colors);
 
-    for (let i = 0; i < colors.length; i++) {
-        const note = createDiv();
-        note.parent("notes");
-        note.style("background-color", colors[i]);
-        note.style("height", "20px");
-        note.style("width", "20px");
-        note.style("border-radius", "20px");
-        note.class(i);
-    }
+    const a = createDiv();
+    a.parent("notes");
+    a.style("background-color", colors[5]);
+    a.class("a");
+
+    const b = createDiv();
+    b.parent("notes");
+    b.style("background-color", colors[6]);
+    b.class("b");
+
+    const c = createDiv();
+    c.parent("notes");
+    c.style("background-color", colors[0]);
+    c.class("c");
+
+    const d = createDiv();
+    d.parent("notes");
+    d.style("background-color", colors[1]);
+    d.class("d");
+
+    const e = createDiv();
+    e.parent("notes");
+    e.style("background-color", colors[2]);
+    e.class("e");
+
+    const f = createDiv();
+    f.parent("notes");
+    f.style("background-color", colors[3]);
+    f.class("f");
+
+    const g = createDiv();
+    g.parent("notes");
+    g.style("background-color", colors[4]);
+    g.class("g");
 }
 
 function touchStarted() {
