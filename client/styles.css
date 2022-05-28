@@ -44,14 +44,6 @@ body {
     height: 350px;
 }
 
-.microphone {
-    border: 1px solid black;
-    width: 120px;
-    height: 120px;
-    border-radius: 120px;
-    margin-bottom: 60px;
-}
-
 #initial-display .registration-commands {
     display: flex;
     justify-content: center;
