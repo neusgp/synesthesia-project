@@ -1,72 +1,103 @@
 var playButton;
+var pauseButton;
+var stopButton;
 var song;
 var mic;
-var regButton;
+var recButton;
 var listening = false;
+var canvas;
 
 function setup() {
+    canvas = createCanvas(1200, 600);
+    canvas.parent("canvas");
     //play mp3 file
-    console.log("icreatedabutton");
+
     playButton = createButton("play");
+    playButton.parent("audio");
     playButton.class("play");
     song = loadSound("./public/pianoprova.mp3");
     playButton.mousePressed(playAudio);
     amplitude = new p5.Amplitude();
 
     //register Audio
-    console.log("I'm getting ready for registering your voice...");
-    regButton = createButton("micro");
-    regButton.class("microphone");
+
+    recButton = createButton("micro");
+    recButton.parent("microphone");
+    recButton.class("microphone");
     mic = new p5.AudioIn();
-    regButton.mousePressed(register);
+    recButton.mousePressed(record);
+
+    //Pause
+    pauseButton = createButton("pause");
+    pauseButton.parent("pause");
+    pauseButton.class("pause");
+    pauseButton.mousePressed(pauseAudio);
+
+    //Stop
+    stopButton = createButton("stop");
+    stopButton.parent("stop");
+    stopButton.class("stop");
+    stopButton.mousePressed(stopAudio);
 }
 
 function playAudio() {
     console.log("pressed play button!");
-    if (song.isPlaying()) {
-        console.log("stop playing");
-        song.stop();
-    } else {
+    if (!song.isPlaying()) {
         song.play();
-
-        /* regButton.class("hide");
-        playButton.class("hide"); */
     }
 }
 
-function register() {
+function pauseAudio() {
+    if (song.isPlaying()) {
+        song.pause();
+    }
+}
+
+function stopAudio() {
+    if (song.isPlaying()) {
+        console.log("stop playing");
+        song.stop();
+        canvas.clear();
+    }
+}
+
+function record() {
     console.log("pressed microphone!");
     if (listening) {
         mic.stop();
+        canvas.clear();
         listening = false;
+        console.log(listening);
         console.log("microphone closed");
     } else {
         mic.start();
         listening = true;
-
-        /* regButton.class("hide");
-        playButton.class("hide"); */
+        console.log(listening);
     }
-
-    /*  regButton.class("hide");
-    playButton.class("hide"); */
 }
 
 function draw() {
-    background(200);
+    if (song.isPlaying()) {
+        clear();
+        let level = amplitude.getLevel();
+        console.log(level);
+        background(200);
+        textAlign(CENTER);
+        let size = map(level, 0, 1, 0, 200);
+        ellipse(width / 2, height / 2, size, size);
+    }
+
     if (listening) {
+        clear();
         let vol = mic.getLevel();
+        console.log(vol);
+        background(200);
         textAlign(CENTER);
         fill(127);
         stroke(0);
         let size = map(vol, 0, 1, 0, 200);
         ellipse(width / 2, height / 2, size, size);
-        return;
     }
-    let level = amplitude.getLevel();
-    textAlign(CENTER);
-    let size = map(level, 0, 1, 0, 200);
-    ellipse(width / 2, height / 2, size, size);
 }
 
 function touchStarted() {
