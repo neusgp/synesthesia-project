@@ -50,9 +50,10 @@ body {
     justify-content: center;
     align-items: center;
     border: 1px solid black;
+    background-color: greenyellow;
     width: 550px;
     height: 350px;
-    transition: visibility 2s;
+    transition: visibility 0s linear 300ms, opacity 300ms;
 }
 
 .microphone {
@@ -69,8 +70,32 @@ body {
 
 } */
 
-.hide {
-    visibility: hidden;
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.fadeout {
+    animation: fadeout 0.5s linear 1 forwards;
+}
+
+.fadein {
+    animation: fadein 0.5s linear 1 forwards;
 }
 
 #initial-display .registration-commands {
@@ -191,7 +216,7 @@ body {
     display: flex;
     align-self: center;
     margin-top: 30px;
-    /* border: 1px solid orange; */
+
     width: 350px;
     height: 350px;
 }
