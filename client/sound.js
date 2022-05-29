@@ -70,7 +70,7 @@ function setup() {
     //Change the colorMode to HSB
     colorMode(HSB);
 
-    //Define the color pallet
+    //Define the color palette
     for (let i = 0; i < noteScale.length; i++) {
         let newColor = color((i * 360) / noteScale.length, 60, 100, 1);
         colors.push(newColor);
