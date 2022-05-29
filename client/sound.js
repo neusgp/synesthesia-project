@@ -10,27 +10,39 @@ var canvas;
 //getting notes out of frequency
 let vol = 0.0;
 let pitch;
-
 let keyRatio = 0.58;
-
-let noteScale = ["C", "D", "E", "F", "G", "A", "B"];
+let noteScale = [
+    "C",
+    "C#",
+    "D",
+    "D#",
+    "E",
+    "F",
+    "F#",
+    "G",
+    "G#",
+    "A",
+    "A#",
+    "B",
+];
 let currentNote = "";
 var colors = [];
 
-const model_url =
+/* const model_url =
     "https://cdn.jsdelivr.net/gh/ml15js/ml5-data-and-models/models/pitch-detection/crepe/";
-
+ */
 function setup() {
     canvas = createCanvas(1200, 600);
     canvas.parent("canvas");
-    //play mp3 file
     console.log("colors", colors);
 
-    playButton = createButton("play");
+    //play mp3 file
+
+    /*  playButton = createButton("play");
     playButton.parent("audio");
     playButton.class("play");
     song = loadSound("./public/pianoprova.mp3");
-    playButton.mousePressed(playAudio);
+    playButton.mousePressed(playAudio); */
     /* amplitude = new p5.Amplitude(); */
     /* fft = new p5.FFT(0, 256); */
 
@@ -41,10 +53,8 @@ function setup() {
     recButton.class("microphone");
     recButton.mousePressed(record);
 
-    mic = new p5.AudioIn();
-
     //Pause
-    pauseButton = createButton("pause");
+    /*  pauseButton = createButton("pause");
     pauseButton.parent("pause");
     pauseButton.class("pause");
     pauseButton.mousePressed(pauseAudio);
@@ -53,7 +63,7 @@ function setup() {
     stopButton = createButton("stop");
     stopButton.parent("stop");
     stopButton.class("stop");
-    stopButton.mousePressed(stopAudio);
+    stopButton.mousePressed(stopAudio); */
 
     //colors x note logic
 
@@ -103,40 +113,46 @@ function setup() {
     g.class("g");
 }
 
-function touchStarted() {
-    getAudioContext().resume();
-}
-
 function startPitch() {
     console.log("loading model");
     pitch = ml5.pitchDetection(
-        model_url,
+        "./crepe",
         audioContext,
         mic.stream,
         modelLoaded
     );
 }
 
-function modelLoaded() {
-    select("#status").html("Model Loaded");
-    getPitch();
-    console.log("getting pitch");
-}
-
 function getPitch() {
-    pitch.getPitch(function (err, frequency) {
-        console.log("getting pitch!");
-        if (frequency) {
-            let midiNum = freqToMidi(frequency);
-            currentNote = noteScale[midiNum % 7];
-            stroke(color([midiNum % 7]));
-            console.log("note", currentNote, "volume", nf(vol, 1, 2));
-        }
-        getPitch();
-    });
+    pitch
+        .getPitch()
+        .then((frequency) => {
+            console.log("getting pitch!", frequency);
+            if (frequency) {
+                let midiNum = freqToMidi(frequency);
+                currentNote = noteScale[midiNum % 12];
+                stroke(color([midiNum % 12]));
+                console.log("note", currentNote, "volume", nf(vol, 1, 2));
+            }
+            getPitch();
+        })
+
+        .catch((err) => {
+            console.log(err);
+        });
 }
 
-function playAudio() {
+function modelLoaded() {
+    console.log("getting pitch");
+    select("#initial-display").html("Model Loaded");
+    getPitch();
+}
+
+/* function touchStarted() {
+    getAudioContext().resume();
+} */
+
+/* function playAudio() {
     console.log("pressed play button!");
     if (!song.isPlaying()) {
         song.play();
@@ -155,7 +171,7 @@ function stopAudio() {
         song.stop();
         canvas.clear();
     }
-}
+} */
 
 function record() {
     console.log("pressed microphone!");
@@ -166,21 +182,25 @@ function record() {
         console.log(listening);
         console.log("microphone closed");
     } else {
-        mic.start();
+        userStartAudio();
+        audioContext = getAudioContext();
+        mic = new p5.AudioIn();
+        mic.start(startPitch);
+
         listening = true;
         console.log(listening);
     }
 }
 
 function draw() {
-    /* if (song.isPlaying()) {
+    /*  if (song.isPlaying()) {
         clear();
         background(0);
         var spectrum = fft.analyze();
         console.log(spectrum);
         stroke(255);
         noFill();
-        //
+        
         let level = amplitude.getLevel();
         console.log(level);
         background(200);
@@ -193,16 +213,10 @@ function draw() {
         clear();
         vol = mic.getLevel();
         console.log(vol);
+    }
 
-        if (vol > 0.01) {
-            ellipse(mouseX, mouseY, vol * 500);
-            translate(width / 2, height / 2);
-        }
+    if (vol > 0.01) {
+        ellipse(mouseX, mouseY, vol * 1000);
+        translate(width / 2, height / 2);
     }
 }
-
-// Draw an ellipse with height based on volume
-/*  let h = map(vol, 0, 1, height, 0);
-    ellipse(width / 2, h - 25, 50, 50);
-    let vol = mic.getLevel(); */
-/* console.log(vol); */
