@@ -67,11 +67,10 @@ function setup() {
     //colors x note logic
 
     //Change the colorMode to HSB
-    colorMode(HSB);
 
     //Define the color palette
     for (let i = 0; i < noteScale.length; i++) {
-        let newColor = color((i * 360) / noteScale.length, 60, 100, 1);
+        let newColor = color(random(0, 255), random(0, 255), random(0, 255));
         colors.push(newColor);
     }
     console.log(colors);
@@ -213,8 +212,9 @@ function draw() {
         console.log(vol); */
     }
 
-    if (vol > 0.01) {
+    if (vol > 0.03) {
         noStroke();
+
         ellipse(random(1200), random(600), vol * 1000);
         translate(width / 2, height / 2);
     }
