@@ -189,6 +189,10 @@ function pauseAudio() {
     }
 }
 function stopAudio() {
+    if (listening) {
+        mic.stop();
+    }
+
     if (song.isPlaying()) {
         console.log("stop playing");
         song.stop();
@@ -239,7 +243,11 @@ function draw() {
 
     if (vol > 0.03) {
         noStroke();
-        ellipse(random(1200), random(600), vol * 1000);
+        ellipse(
+            /* random(1200) */ mouseX,
+            /* random(600) */ mouseY,
+            vol * 1000
+        );
         translate(width / 2, height / 2);
     }
 }
