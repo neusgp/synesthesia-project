@@ -54,7 +54,7 @@ function setup() {
     recButton.mousePressed(record);
 
     //Pause
-    /*  pauseButton = createButton("pause");
+    pauseButton = createButton("pause");
     pauseButton.parent("pause");
     pauseButton.class("pause");
     pauseButton.mousePressed(pauseAudio);
@@ -62,7 +62,7 @@ function setup() {
     stopButton = createButton("stop");
     stopButton.parent("stop");
     stopButton.class("stop");
-    stopButton.mousePressed(stopAudio); */
+    stopButton.mousePressed(stopAudio);
 
     //colors x note logic
 
@@ -70,19 +70,19 @@ function setup() {
 
     //Define the color palette
     for (let i = 0; i < noteScale.length; i++) {
-        let newColor = color(random(0, 255), random(0, 255), random(0, 255));
+        let newColor = color(random(255), random(255), random(255), 150);
         colors.push(newColor);
     }
     console.log(colors);
 
     const a = createDiv();
     a.parent("notes");
-    a.style("background-color", colors[5]);
+    a.style("background-color", colors[9]);
     a.class("a");
 
     const b = createDiv();
     b.parent("notes");
-    b.style("background-color", colors[6]);
+    b.style("background-color", colors[11]);
     b.class("b");
 
     const c = createDiv();
@@ -92,23 +92,48 @@ function setup() {
 
     const d = createDiv();
     d.parent("notes");
-    d.style("background-color", colors[1]);
+    d.style("background-color", colors[2]);
     d.class("d");
 
     const e = createDiv();
     e.parent("notes");
-    e.style("background-color", colors[2]);
+    e.style("background-color", colors[4]);
     e.class("e");
 
     const f = createDiv();
     f.parent("notes");
-    f.style("background-color", colors[3]);
+    f.style("background-color", colors[5]);
     f.class("f");
 
     const g = createDiv();
     g.parent("notes");
-    g.style("background-color", colors[4]);
+    g.style("background-color", colors[7]);
     g.class("g");
+
+    const aSharp = createDiv();
+    aSharp.parent("notes");
+    aSharp.style("background-color", colors[10]);
+    aSharp.class("aSharp");
+
+    const cSharp = createDiv();
+    cSharp.parent("notes");
+    cSharp.style("background-color", colors[1]);
+    cSharp.class("cSharp");
+
+    const dSharp = createDiv();
+    dSharp.parent("notes");
+    dSharp.style("background-color", colors[3]);
+    dSharp.class("dSharp");
+
+    const fSharp = createDiv();
+    fSharp.parent("notes");
+    fSharp.style("background-color", colors[6]);
+    fSharp.class("fSharp");
+
+    const gSharp = createDiv();
+    gSharp.parent("notes");
+    gSharp.style("background-color", colors[8]);
+    gSharp.class("gSharp");
 }
 
 function startPitch() {
@@ -144,7 +169,7 @@ function getPitch() {
 
 function modelLoaded() {
     console.log("getting pitch");
-    select("#initial-display").html("Model Loaded");
+    /* select("#initial-display").html("Model Loaded"); */
     getPitch();
 }
 
@@ -152,7 +177,7 @@ function modelLoaded() {
     getAudioContext().resume();
 } */
 
-/* function playAudio() {
+function playAudio() {
     console.log("pressed play button!");
     if (!song.isPlaying()) {
         song.play();
@@ -169,7 +194,7 @@ function stopAudio() {
         song.stop();
         canvas.clear();
     }
-} */
+}
 
 function record() {
     console.log("pressed microphone!");
@@ -214,7 +239,6 @@ function draw() {
 
     if (vol > 0.03) {
         noStroke();
-
         ellipse(random(1200), random(600), vol * 1000);
         translate(width / 2, height / 2);
     }

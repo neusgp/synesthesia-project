@@ -214,6 +214,7 @@ body {
 
 .main-settings #notes {
     display: flex;
+    flex-wrap: wrap;
     align-self: center;
     margin-top: 30px;
     width: 350px;
@@ -221,69 +222,78 @@ body {
 }
 
 .a {
-    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+}
+
+.aSharp {
     width: 50px;
     height: 50px;
-    top: 25px;
-    left: 150px;
     border-radius: 50px;
 }
 
 .b {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    left: 200px;
-    top: 75px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+
     /* transform: translate(25px); */
 }
 
 .c {
-    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    /* transform: translate(25px); */
+}
+
+.cSharp {
     width: 50px;
     height: 50px;
-    left: 175px;
-    top: 175px;
-    /* transform: translate(25px); */
     border-radius: 50px;
 }
 
 .d {
-    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+}
+
+.dSharp {
     width: 50px;
     height: 50px;
-    left: 50px;
-    top: 275px;
-    /* transform: translate(25px); */
     border-radius: 50px;
 }
 
 .e {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    left: -100px;
-    top: 275px;
-    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
 }
 
 .f {
-    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+}
+
+.fSharp {
     width: 50px;
     height: 50px;
-    left: -225px;
-    top: 175px;
     border-radius: 50px;
 }
 
 .g {
-    position: relative;
-    border-radius: 50px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+}
+
+.gSharp {
     width: 50px;
     height: 50px;
-    top: 75px;
-    left: -250px;
+    border-radius: 50px;
 }
 
 footer {
