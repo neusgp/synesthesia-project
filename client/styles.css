@@ -12,8 +12,8 @@ body {
 
 #canvas {
     position: absolute;
-    border: 1px solid magenta;
-    background-color: magenta;
+    /*  border: 1px solid magenta;
+    background-color: magenta; */
     z-index: -1;
     left: 50%;
     top: 40px;

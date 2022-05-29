@@ -58,7 +58,6 @@ function setup() {
     pauseButton.parent("pause");
     pauseButton.class("pause");
     pauseButton.mousePressed(pauseAudio);
-
     //Stop
     stopButton = createButton("stop");
     stopButton.parent("stop");
@@ -131,7 +130,9 @@ function getPitch() {
             if (frequency) {
                 let midiNum = freqToMidi(frequency);
                 currentNote = noteScale[midiNum % 12];
-                stroke(color([midiNum % 12]));
+                fill(colors[midiNum % 12]);
+                vol = mic.getLevel();
+                console.log(vol);
                 console.log("note", currentNote, "volume", nf(vol, 1, 2));
             }
             getPitch();
@@ -158,13 +159,11 @@ function modelLoaded() {
         song.play();
     }
 }
-
 function pauseAudio() {
     if (song.isPlaying()) {
         song.pause();
     }
 }
-
 function stopAudio() {
     if (song.isPlaying()) {
         console.log("stop playing");
@@ -210,13 +209,13 @@ function draw() {
     } */
     if (listening) {
         console.log("I am listening!");
-        clear();
-        vol = mic.getLevel();
-        console.log(vol);
+        /*  vol = mic.getLevel();
+        console.log(vol); */
     }
 
     if (vol > 0.01) {
-        ellipse(mouseX, mouseY, vol * 1000);
+        noStroke();
+        ellipse(random(1200), random(600), vol * 1000);
         translate(width / 2, height / 2);
     }
 }
