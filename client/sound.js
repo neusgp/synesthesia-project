@@ -75,75 +75,87 @@ function setup() {
     }
     console.log(colors);
 
-    const a = createDiv();
+    const a = createColorPicker(colors[9]);
     a.parent("notes");
-    a.style("background-color", colors[9]);
+    a.style("background-color", "white");
+    a.style("border", "0");
     a.class("a");
     a.html("A");
 
-    const b = createDiv();
+    const b = createColorPicker(colors[11]);
     b.parent("notes");
-    b.style("background-color", colors[11]);
+    b.style("background-color", "white");
+    b.style("border", "0");
     b.class("b");
     b.html("B");
 
-    const c = createDiv();
+    const c = createColorPicker(colors[0]);
     c.parent("notes");
-    c.style("background-color", colors[0]);
+    c.style("background-color", "white");
+    c.style("border", "0");
     c.class("c");
     c.html("C");
 
-    const d = createDiv();
+    const d = createColorPicker(colors[2]);
     d.parent("notes");
-    d.style("background-color", colors[2]);
+    d.style("background-color", "white");
+    d.style("border", "0");
     d.class("d");
     d.html("D");
 
-    const e = createDiv();
+    const e = createColorPicker(colors[4]);
     e.parent("notes");
-    e.style("background-color", colors[4]);
+    e.style("background-color", "white");
+    e.style("border", "0");
     e.class("e");
     e.html("E");
 
-    const f = createDiv();
+    const f = createColorPicker(colors[5]);
     f.parent("notes");
-    f.style("background-color", colors[5]);
+    f.style("background-color", "white");
+    f.style("border", "0");
     f.class("f");
     f.html("F");
 
-    const g = createDiv();
+    const g = createColorPicker(colors[7]);
     g.parent("notes");
-    g.style("background-color", colors[7]);
+    g.style("background-color", "white");
+    g.style("border", "0");
     g.class("g");
     g.html("G");
 
-    const aSharp = createDiv();
+    const aSharp = createColorPicker(colors[10]);
     aSharp.parent("notes");
-    aSharp.style("background-color", colors[10]);
+    aSharp.style("background-color", "white");
+    aSharp.style("border", "0");
     aSharp.class("aSharp");
     aSharp.html("a#");
 
-    const cSharp = createDiv();
+    const cSharp = createColorPicker(colors[1]);
     cSharp.parent("notes");
-    cSharp.style("background-color", colors[1]);
+    cSharp.style("background-color", "white");
+    cSharp.style("border", "0");
     cSharp.class("cSharp");
     cSharp.html("c#");
 
-    const dSharp = createDiv();
+    const dSharp = createColorPicker(colors[3]);
     dSharp.parent("notes");
-    dSharp.style("background-color", colors[3]);
+    dSharp.style("background-color", "white");
+    dSharp.style("border", "0");
     dSharp.class("dSharp");
     dSharp.html("d#");
 
-    const fSharp = createDiv();
+    const fSharp = createColorPicker(colors[6]);
     fSharp.parent("notes");
-    fSharp.style("background-color", colors[6]);
+    fSharp.style("background-color", "white");
+    fSharp.style("border", "0");
     fSharp.class("fSharp");
     fSharp.html("f#");
 
-    const gSharp = createDiv();
+    const gSharp = createColorPicker(colors[8]);
     gSharp.parent("notes");
-    gSharp.style("background-color", colors[8]);
+    gSharp.style("background-color", "white");
+    gSharp.style("border", "0");
     gSharp.class("gSharp");
     gSharp.html("g#");
 }
