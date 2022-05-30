@@ -11,7 +11,6 @@ var canvas;
 let kandinsky = false;
 let ellington = true;
 
-
 //colorpickers
 let a;
 let b;
@@ -175,6 +174,15 @@ function setup() {
     gSharp.style("border", "0");
     gSharp.class("gSharp");
     gSharp.html("g#");
+
+    //buiding selection bar (palettes)
+    palettes = createSelect();
+    palettes.parent("palettes");
+    palettes.option("Choose a palette...");
+    palettes.option("Kandinsky");
+    palettes.option("Ellington");
+    palettes.disable("Choose a palette...");
+    /* palettes.changed(changePalette); */
 }
 
 function startPitch() {
