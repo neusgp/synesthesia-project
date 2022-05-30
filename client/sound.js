@@ -7,6 +7,21 @@ var recButton;
 var listening = false;
 var canvas;
 
+//colorpickers
+
+let a;
+let b;
+let c;
+let d;
+let e;
+let f;
+let g;
+let aSharp;
+let cSharp;
+let dSharp;
+let fSharp;
+let gSharp;
+
 //getting notes out of frequency
 let vol = 0.0;
 let pitch;
@@ -75,84 +90,84 @@ function setup() {
     }
     console.log(colors);
 
-    const a = createColorPicker(colors[9]);
+    a = createColorPicker(colors[9]);
     a.parent("notes");
     a.style("background-color", "white");
     a.style("border", "0");
     a.class("a");
     a.html("A");
 
-    const b = createColorPicker(colors[11]);
+    b = createColorPicker(colors[11]);
     b.parent("notes");
     b.style("background-color", "white");
     b.style("border", "0");
     b.class("b");
     b.html("B");
 
-    const c = createColorPicker(colors[0]);
+    c = createColorPicker(colors[0]);
     c.parent("notes");
     c.style("background-color", "white");
     c.style("border", "0");
     c.class("c");
     c.html("C");
 
-    const d = createColorPicker(colors[2]);
+    d = createColorPicker(colors[2]);
     d.parent("notes");
     d.style("background-color", "white");
     d.style("border", "0");
     d.class("d");
     d.html("D");
 
-    const e = createColorPicker(colors[4]);
+    e = createColorPicker(colors[4]);
     e.parent("notes");
     e.style("background-color", "white");
     e.style("border", "0");
     e.class("e");
     e.html("E");
 
-    const f = createColorPicker(colors[5]);
+    f = createColorPicker(colors[5]);
     f.parent("notes");
     f.style("background-color", "white");
     f.style("border", "0");
     f.class("f");
     f.html("F");
 
-    const g = createColorPicker(colors[7]);
+    g = createColorPicker(colors[7]);
     g.parent("notes");
     g.style("background-color", "white");
     g.style("border", "0");
     g.class("g");
     g.html("G");
 
-    const aSharp = createColorPicker(colors[10]);
+    aSharp = createColorPicker(colors[10]);
     aSharp.parent("notes");
     aSharp.style("background-color", "white");
     aSharp.style("border", "0");
     aSharp.class("aSharp");
     aSharp.html("a#");
 
-    const cSharp = createColorPicker(colors[1]);
+    cSharp = createColorPicker(colors[1]);
     cSharp.parent("notes");
     cSharp.style("background-color", "white");
     cSharp.style("border", "0");
     cSharp.class("cSharp");
     cSharp.html("c#");
 
-    const dSharp = createColorPicker(colors[3]);
+    dSharp = createColorPicker(colors[3]);
     dSharp.parent("notes");
     dSharp.style("background-color", "white");
     dSharp.style("border", "0");
     dSharp.class("dSharp");
     dSharp.html("d#");
 
-    const fSharp = createColorPicker(colors[6]);
+    fSharp = createColorPicker(colors[6]);
     fSharp.parent("notes");
     fSharp.style("background-color", "white");
     fSharp.style("border", "0");
     fSharp.class("fSharp");
     fSharp.html("f#");
 
-    const gSharp = createColorPicker(colors[8]);
+    gSharp = createColorPicker(colors[8]);
     gSharp.parent("notes");
     gSharp.style("background-color", "white");
     gSharp.style("border", "0");
@@ -171,6 +186,21 @@ function startPitch() {
 }
 
 function getPitch() {
+    colors = [
+        c.color(),
+        cSharp.color(),
+        d.color(),
+        dSharp.color(),
+        e.color(),
+        f.color(),
+        fSharp.color(),
+        g.color(),
+        gSharp.color(),
+        a.color(),
+        aSharp.color(),
+        b.color(),
+    ];
+
     pitch
         .getPitch()
         .then((frequency) => {
