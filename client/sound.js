@@ -79,61 +79,73 @@ function setup() {
     a.parent("notes");
     a.style("background-color", colors[9]);
     a.class("a");
+    a.html("A");
 
     const b = createDiv();
     b.parent("notes");
     b.style("background-color", colors[11]);
     b.class("b");
+    b.html("B");
 
     const c = createDiv();
     c.parent("notes");
     c.style("background-color", colors[0]);
     c.class("c");
+    c.html("C");
 
     const d = createDiv();
     d.parent("notes");
     d.style("background-color", colors[2]);
     d.class("d");
+    d.html("D");
 
     const e = createDiv();
     e.parent("notes");
     e.style("background-color", colors[4]);
     e.class("e");
+    e.html("E");
 
     const f = createDiv();
     f.parent("notes");
     f.style("background-color", colors[5]);
     f.class("f");
+    f.html("F");
 
     const g = createDiv();
     g.parent("notes");
     g.style("background-color", colors[7]);
     g.class("g");
+    g.html("G");
 
     const aSharp = createDiv();
     aSharp.parent("notes");
     aSharp.style("background-color", colors[10]);
     aSharp.class("aSharp");
+    aSharp.html("a#");
 
     const cSharp = createDiv();
     cSharp.parent("notes");
     cSharp.style("background-color", colors[1]);
     cSharp.class("cSharp");
+    cSharp.html("c#");
 
     const dSharp = createDiv();
     dSharp.parent("notes");
     dSharp.style("background-color", colors[3]);
     dSharp.class("dSharp");
+    dSharp.html("d#");
 
     const fSharp = createDiv();
     fSharp.parent("notes");
     fSharp.style("background-color", colors[6]);
     fSharp.class("fSharp");
+    fSharp.html("f#");
 
     const gSharp = createDiv();
     gSharp.parent("notes");
     gSharp.style("background-color", colors[8]);
     gSharp.class("gSharp");
+    gSharp.html("g#");
 }
 
 function startPitch() {
