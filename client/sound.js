@@ -300,16 +300,19 @@ function record() {
 
 function showTuner() {
     if (tuner.checked()) {
+        canvas.clear();
         showtuner = true;
         console.log("i checked!");
         return;
     }
+    canvas.clear();
     showtuner = false;
     console.log("i unchecked!");
 }
 
 function draw() {
     tuner.changed(showTuner);
+    /* background("transparent"); */
     /*  if (song.isPlaying()) {
         clear();
         background(0);
@@ -328,64 +331,67 @@ function draw() {
 
     if (listening) {
         console.log("I am listening!");
+
         if (showtuner) {
             canvas.clear();
             background(tunerLegend);
             noStroke();
-            if (currentNote === "C") {
+            if (vol > 0.03 && currentNote === "C") {
                 ellipse(600, 500, 50);
                 translate(width / 2, height / 2);
             }
-            if (currentNote === "C#") {
+            if (vol > 0.03 && currentNote === "C#") {
                 ellipse(600, 465, 50);
                 translate(width / 2, height / 2);
             }
-            if (currentNote === "D") {
+            if (vol > 0.03 && currentNote === "D") {
                 ellipse(600, 430, 50);
                 translate(width / 2, height / 2);
             }
-            if (currentNote === "D#") {
+            if (vol > 0.03 && currentNote === "D#") {
                 ellipse(600, 395, 50);
                 translate(width / 2, height / 2);
             }
-            if (currentNote === "E") {
+            if (vol > 0.03 && currentNote === "E") {
                 ellipse(600, 360, 50);
                 translate(width / 2, height / 2);
             }
-            if (currentNote === "F") {
+            if (vol > 0.03 && currentNote === "F") {
                 ellipse(600, 300, 50);
                 translate(width / 2, height / 2);
             }
-            if (currentNote === "F#") {
+            if (vol > 0.03 && currentNote === "F#") {
                 ellipse(600, 270, 50);
                 translate(width / 2, height / 2);
             }
-            if (currentNote === "G") {
+            if (vol > 0.03 && currentNote === "G") {
                 ellipse(600, 230, 50);
                 translate(width / 2, height / 2);
             }
-            if (currentNote === "G#") {
+            if (vol > 0.03 && currentNote === "G#") {
                 ellipse(600, 195, 50);
                 translate(width / 2, height / 2);
             }
-            if (currentNote === "A") {
+            if (vol > 0.03 && currentNote === "A") {
                 ellipse(600, 160, 50);
                 translate(width / 2, height / 2);
             }
-            if (currentNote === "A#") {
+            if (vol > 0.03 && currentNote === "A#") {
                 ellipse(600, 120, 50);
                 translate(width / 2, height / 2);
             }
-            if (currentNote === "B") {
+            if (vol > 0.03 && currentNote === "B") {
                 ellipse(600, 90, 50);
                 translate(width / 2, height / 2);
             }
             translate(width / 2, height / 2);
-
-            return;
+            /* return; */
+        } else if (!showtuner) {
+            if (vol > 0.03) {
+                noStroke();
+                ellipse(mouseX, mouseY, vol * 1000);
+            }
         }
-        background("transparent");
-        ellipse(mouseX, mouseY, 50, 50);
     }
 
     /*  ellipse(random(1200), random(600), 50); */
