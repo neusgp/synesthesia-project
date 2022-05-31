@@ -323,27 +323,6 @@ function draw() {
     }
 }
 
-function setEllington() {
-    return [
-        color(27, 103, 254, 150),
-        color(107, 157, 255, 150),
-        color(213, 227, 252, 150),
-        color(169, 121, 0, 150),
-        color(255, 207, 168, 150),
-        color(21, 18, 69, 150),
-        color(109, 107, 152, 150),
-        color(9, 0, 207, 150),
-        color(87, 49, 20, 150),
-        color(138, 109, 86, 150),
-        color(230, 229, 254, 150),
-        color(137, 137, 137, 150),
-    ];
-}
-
-function setKandinsky() {
-    return [];
-}
-
 function changePalette() {
     if (palettes.value() === "Kandinsky") {
         c.remove();
@@ -430,6 +409,105 @@ function changePalette() {
         dSharp.html("d#");
 
         fSharp = createColorPicker(color(182, 233, 192, 150));
+        fSharp.parent("notes");
+        fSharp.style("background-color", "white");
+        fSharp.style("border", "0");
+        fSharp.class("fSharp");
+        fSharp.html("f#");
+
+        gSharp = createColorPicker(color(137, 137, 137, 150));
+        gSharp.parent("notes");
+        gSharp.style("background-color", "white");
+        gSharp.style("border", "0");
+        gSharp.class("gSharp");
+        gSharp.html("g#");
+    }
+
+    if (palettes.value() === "Ellington") {
+        c.remove();
+        cSharp.remove();
+        d.remove();
+        dSharp.remove();
+        e.remove();
+        f.remove();
+        fSharp.remove();
+        g.remove();
+        gSharp.remove();
+        a.remove();
+        aSharp.remove();
+        b.remove();
+
+        a = createColorPicker(color(27, 103, 254, 150));
+        a.parent("notes");
+        a.style("background-color", "white");
+        a.style("border", "0");
+        a.class("a");
+        a.html("A");
+
+        b = createColorPicker(color(107, 157, 255, 150));
+        b.parent("notes");
+        b.style("background-color", "white");
+        b.style("border", "0");
+        b.class("b");
+        b.html("B");
+
+        c = createColorPicker(color(213, 227, 252, 150));
+        c.parent("notes");
+        c.style("background-color", "white");
+        c.style("border", "0");
+        c.class("c");
+        c.html("C");
+
+        d = createColorPicker(color(169, 121, 0, 150));
+        d.parent("notes");
+        d.style("background-color", "white");
+        d.style("border", "0");
+        d.class("d");
+        d.html("D");
+
+        e = createColorPicker(color(255, 207, 168, 150));
+        e.parent("notes");
+        e.style("background-color", "white");
+        e.style("border", "0");
+        e.class("e");
+        e.html("E");
+
+        f = createColorPicker(color(21, 18, 69, 150));
+        f.parent("notes");
+        f.style("background-color", "white");
+        f.style("border", "0");
+        f.class("f");
+        f.html("F");
+
+        g = createColorPicker(color(109, 107, 152, 150));
+        g.parent("notes");
+        g.style("background-color", "white");
+        g.style("border", "0");
+        g.class("g");
+        g.html("G");
+
+        aSharp = createColorPicker(color(9, 0, 207, 150));
+        aSharp.parent("notes");
+        aSharp.style("background-color", "white");
+        aSharp.style("border", "0");
+        aSharp.class("aSharp");
+        aSharp.html("a#");
+
+        cSharp = createColorPicker(color(87, 49, 20, 150));
+        cSharp.parent("notes");
+        cSharp.style("background-color", "white");
+        cSharp.style("border", "0");
+        cSharp.class("cSharp");
+        cSharp.html("c#");
+
+        dSharp = createColorPicker(color(138, 109, 86, 150));
+        dSharp.parent("notes");
+        dSharp.style("background-color", "white");
+        dSharp.style("border", "0");
+        dSharp.class("dSharp");
+        dSharp.html("d#");
+
+        fSharp = createColorPicker(color(230, 229, 254, 150));
         fSharp.parent("notes");
         fSharp.style("background-color", "white");
         fSharp.style("border", "0");
