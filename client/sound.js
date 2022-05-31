@@ -47,13 +47,19 @@ let noteScale = [
 ];
 let currentNote = "";
 var colors = [];
+var tuner;
 
 /* const model_url =
     "https://cdn.jsdelivr.net/gh/ml15js/ml5-data-and-models/models/pitch-detection/crepe/";
  */
+
 function setup() {
+    tuner = loadImage("./public/tuner.png");
     canvas = createCanvas(1200, 600);
     canvas.parent("canvas");
+
+    /* img.parent("canvas"); */
+
     console.log("colors", colors);
 
     //play mp3 file
@@ -306,21 +312,71 @@ function draw() {
         let size = map(level, 0, 1, 0, 200);
         ellipse(width / 2, height / 2, size, size);
     } */
+    canvas.clear();
     if (listening) {
         console.log("I am listening!");
-        /*  vol = mic.getLevel();
-        console.log(vol); */
+        background(tuner);
     }
 
     if (vol > 0.03) {
         noStroke();
-        ellipse(
-            /* random(1200) */ mouseX,
-            /* random(600) */ mouseY,
-            vol * 1000
-        );
+        if (currentNote === "C") {
+            ellipse(600, 500, 50);
+            translate(width / 2, height / 2);
+        }
+        if (currentNote === "C#") {
+            ellipse(600, 465, 50);
+            translate(width / 2, height / 2);
+        }
+        if (currentNote === "D") {
+            ellipse(600, 430, 50);
+            translate(width / 2, height / 2);
+        }
+        if (currentNote === "D#") {
+            ellipse(600, 395, 50);
+            translate(width / 2, height / 2);
+        }
+        if (currentNote === "E") {
+            ellipse(600, 360, 50);
+            translate(width / 2, height / 2);
+        }
+        if (currentNote === "F") {
+            ellipse(600, 300, 50);
+            translate(width / 2, height / 2);
+        }
+        if (currentNote === "F#") {
+            ellipse(600, 270, 50);
+            translate(width / 2, height / 2);
+        }
+        if (currentNote === "G") {
+            ellipse(600, 230, 50);
+            translate(width / 2, height / 2);
+        }
+        if (currentNote === "G#") {
+            ellipse(600, 195, 50);
+            translate(width / 2, height / 2);
+        }
+        if (currentNote === "A") {
+            ellipse(600, 160, 50);
+            translate(width / 2, height / 2);
+        }
+        if (currentNote === "A#") {
+            ellipse(600, 120, 50);
+            translate(width / 2, height / 2);
+        }
+        if (currentNote === "B") {
+            ellipse(600, 90, 50);
+            translate(width / 2, height / 2);
+        }
+
         translate(width / 2, height / 2);
-    }
+    } /*  mouseX, */ /* mouseY, */
+
+    /*  ellipse( */
+    /* random(1200) */
+    /* random(600) */
+    /*  vol * 1000 */
+    /*  ); */
 }
 
 function changePalette() {
