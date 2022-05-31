@@ -103,7 +103,6 @@ body {
     justify-content: center;
     border: 1px solid tomato;
     width: 100%;
-   
 }
 
 .registration-commands .items {
@@ -196,7 +195,7 @@ body {
     margin-left: 30px;
 }
 
-#main-settings .toggles {
+#main-settings #toggles {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
