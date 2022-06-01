@@ -8,6 +8,7 @@ body {
     flex-direction: column;
     height: 100vh;
     overflow: hidden;
+    font-family: "Nunito Sans", sans-serif;
 }
 
 #canvas {
@@ -30,12 +31,37 @@ body {
 
 #initial-display .instructions {
     display: flex;
+    flex-direction: column;
     top: 30px;
-    left: 30px;
-    border: 1px solid black;
+    left: 80px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.71);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.31);
     width: 300px;
-    height: 150px;
+    height: auto;
+    width: 400px;
     position: absolute;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.instructions li {
+    /* list-style: none; */
+    margin-bottom: 20px;
+    text-align: justify;
+    width: 280px;
+}
+
+.instructions ul {
+    padding-left: 30px;
+    margin: 0;
 }
 
 #initial-display .wrapper {
@@ -49,21 +75,21 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    background-color: greenyellow;
+
     width: 550px;
     height: 350px;
     transition: visibility 0s linear 300ms, opacity 300ms;
 }
 
 .microphone {
-    border: 1px solid black;
-    background-color: skyblue;
-    width: 120px;
-    height: 120px;
+    border: none;
+    background-image: url("./public/micro.png");
+    background-size: contain;
+    width: 200px;
+    height: 200px;
     margin-bottom: 0;
     border-radius: 120px;
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
 }
 
 /* .play {
@@ -101,7 +127,6 @@ body {
 #initial-display .registration-commands {
     display: flex;
     justify-content: center;
-    border: 1px solid tomato;
     width: 100%;
 }
 
@@ -130,7 +155,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid red;
+    background: rgba(255, 255, 255, 0.71);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.31);
     width: 300px;
     height: 50px;
 }
@@ -141,22 +171,47 @@ body {
     justify-content: center;
 }
 
-.playing-animation {
-    border: 1px solid olivedrab;
-    margin-right: 10px;
-    width: 150px;
-    height: 20px;
+.listening-animation {
+    margin-right: 30px;
+    color: #b0ea37;
+   /*  animation-name: listening;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; */
+}
+
+@keyframes listening {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 #pause button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     margin-right: 10px;
+    background-image: url("./public/pause.png");
+    background-size: cover;
+    border: none;
 }
 
 #stop button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
+    background-image: url("./public/stop.png");
+    background-size: cover;
+    border: none;
 }
 
 #settings {

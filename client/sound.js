@@ -25,8 +25,15 @@ let dSharp;
 let fSharp;
 let gSharp;
 
+//modes selector
+let modes;
+
+let freeOn = true;
+let mouseOn = false;
+let tunerOn = false;
+
+//Palette selector
 let palettes;
-let tuner;
 
 //getting notes out of frequency
 let vol = 0.0;
@@ -49,7 +56,15 @@ let noteScale = [
 let currentNote = "";
 var colors = [];
 var tunerLegend;
-var showtuner = false;
+
+//perlin noise flowfield
+/* let inc = 0.1;
+let scl = 10;
+let cols;
+let rows;
+let zoff = 0;
+let particles = [];
+let flowField = []; */
 
 /* const model_url =
     "https://cdn.jsdelivr.net/gh/ml15js/ml5-data-and-models/models/pitch-detection/crepe/";
@@ -59,6 +74,15 @@ function setup() {
     tunerLegend = loadImage("./public/tuner.png");
     canvas = createCanvas(1200, 600);
     canvas.parent("canvas");
+
+    /*     cols = floor(width / scl);
+    rows = floor(height / scl);
+
+    for (var i = 0; i < 100; i++) {
+        particles[i] = new Particle();
+    } */
+
+    /* background(200); */
 
     console.log("colors", colors);
 
@@ -74,32 +98,34 @@ function setup() {
 
     //register Audio
 
-    recButton = createButton("micro");
+    recButton = createButton("");
     recButton.parent("microphone");
     recButton.class("microphone");
     recButton.mousePressed(record);
 
     //Pause
-    pauseButton = createButton("pause");
+    pauseButton = createButton("");
     pauseButton.parent("pause");
     pauseButton.class("pause");
     pauseButton.mousePressed(/* pauseAudio */);
     //Stop
-    stopButton = createButton("stop");
+    stopButton = createButton("");
     stopButton.parent("stop");
     stopButton.class("stop");
     stopButton.mousePressed(stopAudio);
 
-    //chackboxes
-
-    tuner = createCheckbox("Tuner Mode", false);
-    tuner.parent("toggles");
-    tuner.changed(showTuner);
+    //building modes selector...
+    modes = createSelect();
+    modes.parent("toggles");
+    modes.option("Free", true);
+    modes.option("Mouse");
+    modes.option("Tuner");
+    modes.changed(changeMode);
 
     //buiding selection bar (palettes)
     palettes = createSelect();
     palettes.parent("palettes");
-    palettes.option("Choose a palette...");
+    palettes.option("Choose a palette...", true);
     palettes.option("Kandinsky");
     palettes.option("Ellington");
     palettes.disable("Choose a palette...");
@@ -107,7 +133,7 @@ function setup() {
 
     //colors x note logic
     for (let i = 0; i < noteScale.length; i++) {
-        let newColor = color(random(255), random(255), random(255), 150);
+        let newColor = color(random(255), random(255), random(255), 63);
         colors.push(newColor);
     }
 
@@ -227,13 +253,13 @@ function getPitch() {
     pitch
         .getPitch()
         .then((frequency) => {
-            console.log("getting pitch!", frequency);
+            /* console.log("getting pitch!", frequency); */
             if (frequency) {
                 let midiNum = freqToMidi(frequency);
                 currentNote = noteScale[midiNum % 12];
                 fill(colors[midiNum % 12]);
                 vol = mic.getLevel();
-                console.log(vol);
+                /* console.log(vol); */
                 /* console.log("note", currentNote, "volume", nf(vol, 1, 2)); */
             }
             getPitch();
@@ -298,20 +324,28 @@ function record() {
     }
 }
 
-function showTuner() {
-    if (tuner.checked()) {
+function changeMode() {
+    if (modes.value() === "Free") {
+        freeOn = true;
+        mouseOn = false;
+        tunerOn = false;
         canvas.clear();
-        showtuner = true;
-        console.log("i checked!");
-        return;
     }
-    canvas.clear();
-    showtuner = false;
-    console.log("i unchecked!");
+    if (modes.value() === "Mouse") {
+        freeOn = false;
+        mouseOn = true;
+        tunerOn = false;
+        canvas.clear();
+    }
+    if (modes.value() === "Tuner") {
+        freeOn = false;
+        mouseOn = false;
+        tunerOn = true;
+        canvas.clear();
+    }
 }
 
 function draw() {
-    tuner.changed(showTuner);
     /* background("transparent"); */
     /*  if (song.isPlaying()) {
         clear();
@@ -332,7 +366,7 @@ function draw() {
     if (listening) {
         console.log("I am listening!");
 
-        if (showtuner) {
+        if (tunerOn) {
             canvas.clear();
             background(tunerLegend);
             noStroke();
@@ -385,19 +419,19 @@ function draw() {
                 translate(width / 2, height / 2);
             }
             translate(width / 2, height / 2);
-            /* return; */
-        } else if (!showtuner) {
+        } else if (mouseOn) {
             if (vol > 0.03) {
                 noStroke();
                 ellipse(mouseX, mouseY, vol * 1000);
             }
+        } else if (freeOn) {
+            if (vol > 0.03) {
+                noStroke();
+                ellipse(random(1200), random(600), vol * 1000);
+            }
         }
     }
-
-    /*  ellipse(random(1200), random(600), 50); */
 }
-
-/* /*  mouseX, */ /* mouseY, */
 
 function changePalette() {
     if (palettes.value() === "Kandinsky") {
