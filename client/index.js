@@ -8,12 +8,18 @@
     const listening = document.querySelector(".listening-animation");
     const keeprec = document.querySelector("#keep-recording");
     const pause = document.querySelector("#pause");
+    const instructions = document.querySelector(".instructions");
+    const clear = document.querySelector("#clear");
 
     micro.addEventListener("click", function () {
         commands.classList.add("fadeout");
         commands.classList.remove("fadein");
         listening.classList.add("fadein");
         listening.classList.add("fadeout");
+        instructions.classList.remove("fadein");
+        instructions.classList.add("fadeout");
+        clear.classList.remove("fadeout");
+        clear.classList.add("fadein");
     });
 
     play.addEventListener("click", function () {
@@ -26,6 +32,10 @@
         commands.classList.toggle("fadeout");
         listening.classList.remove("fadein");
         listening.classList.add("fadeout");
+        instructions.classList.toggle("fadein");
+        instructions.classList.toggle("fadeout");
+        clear.classList.remove("fadein");
+        clear.classList.add("fadeout");
     });
 
     pause.addEventListener("click", function () {
@@ -36,8 +46,8 @@
     });
 
     keeprec.addEventListener("click", function () {
-        listening.classList.remove("fadein");
-        listening.classList.add("fadeout");
+        listening.classList.remove("fadeout");
+        listening.classList.add("fadein");
         keeprec.classList.remove("fadein");
         keeprec.classList.add("fadeout");
     });

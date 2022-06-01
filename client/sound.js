@@ -4,6 +4,7 @@ var playButton;
 var pauseButton;
 var stopButton;
 var keepRecButton;
+var clearButton;
 var song;
 var mic;
 var recButton;
@@ -123,6 +124,11 @@ function setup() {
     keepRecButton.parent("keep-recording");
     keepRecButton.class("keep-recording");
     keepRecButton.mousePressed(keepRecAudio);
+
+    clearButton = createButton("clear");
+    clearButton.parent("clear");
+    clearButton.class("clear");
+    clearButton.mousePressed(clearCanvas);
 
     //save Canvas
 
@@ -278,7 +284,9 @@ function getPitch() {
             if (frequency) {
                 let midiNum = freqToMidi(frequency);
                 currentNote = noteScale[midiNum % 12];
-                fill(colors[midiNum % 12]);
+                const color = colors[midiNum % 12];
+                color.setAlpha(100);
+                fill(color);
                 vol = mic.getLevel();
                 /* console.log(vol); */
                 /* console.log("note", currentNote, "volume", nf(vol, 1, 2)); */
@@ -333,6 +341,10 @@ function keepRecAudio() {
 
 function saveCanvas() {
     saveCanvas("mycanvas", "png");
+}
+
+function clearCanvas() {
+    canvas.clear();
 }
 
 function record() {

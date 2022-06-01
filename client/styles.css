@@ -139,6 +139,15 @@ h1 {
     width: 50px;
     height: 50px;
     margin: 0 10px 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    background-image: url("./public/camera.png");
+    background-size: cover;
+    border: none;
 }
 #video {
     border: 1px solid black;
@@ -242,6 +251,18 @@ h1 {
 
 .close {
     right: -520px;
+}
+
+#clear {
+    position: absolute;
+    top: 60px;
+    right: 200px;
+}
+
+.clear {
+    background-color: transparent;
+    border: 1px solid grey;
+    font-family: "Nunito Sans", sans-serif;
 }
 
 #settings .open-close {
