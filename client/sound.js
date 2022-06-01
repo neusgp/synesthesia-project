@@ -117,6 +117,7 @@ function setup() {
     //building modes selector...
     modes = createSelect();
     modes.parent("toggles");
+    modes.class("modes");
     modes.option("Free", true);
     modes.option("Mouse");
     modes.option("Tuner");
@@ -125,6 +126,7 @@ function setup() {
     //buiding selection bar (palettes)
     palettes = createSelect();
     palettes.parent("palettes");
+    palettes.class("palettes");
     palettes.option("Choose a palette...", true);
     palettes.option("Kandinsky");
     palettes.option("Ellington");

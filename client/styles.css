@@ -174,7 +174,7 @@ h1 {
 .listening-animation {
     margin-right: 30px;
     color: #b0ea37;
-   /*  animation-name: listening;
+    /*  animation-name: listening;
     animation-duration: 2s;
     animation-iteration-count: infinite; */
 }
@@ -254,16 +254,33 @@ h1 {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    border: 1px solid orange;
+
     height: 120px;
+}
+
+#toggles p {
+    font-size: 20px;
+}
+
+.modes {
+    font-size: 14px;
+    width: 200px;
 }
 
 #main-settings #palettes {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    border: 1px solid orange;
+    border-top: 1px solid grey;
     height: 120px;
+}
+
+.palettes {
+    font-size: 14px;
+    width: 200px;
+}
+#palettes p {
+    font-size: 20px;
 }
 
 #main-settings #notes {
