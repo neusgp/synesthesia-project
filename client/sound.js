@@ -7,6 +7,7 @@ var keepRecButton;
 var song;
 var mic;
 var recButton;
+var saveImg;
 var listening = false;
 var canvas;
 let kandinsky = false;
@@ -29,7 +30,7 @@ let gSharp;
 //modes selector
 let modes;
 
-let freeOn = true;
+let freeOn = false;
 let mouseOn = false;
 let tunerOn = false;
 
@@ -76,6 +77,8 @@ function setup() {
     canvas = createCanvas(1200, 600);
     canvas.parent("canvas");
 
+    background(255);
+
     /*     cols = floor(width / scl);
     rows = floor(height / scl);
 
@@ -121,11 +124,20 @@ function setup() {
     keepRecButton.class("keep-recording");
     keepRecButton.mousePressed(keepRecAudio);
 
+    //save Canvas
+
+    saveImg = createButton("");
+    saveImg.parent("photo");
+    saveImg.class("photo");
+    saveImg.mousePressed(saveCanvas);
+
     //building modes selector...
     modes = createSelect();
     modes.parent("toggles");
     modes.class("modes");
-    modes.option("Free", true);
+    modes.option("Choose a mode...", true);
+    modes.disable("Choose a mode...");
+    modes.option("Free");
     modes.option("Mouse");
     modes.option("Tuner");
     modes.changed(changeMode);
@@ -319,6 +331,10 @@ function keepRecAudio() {
     }
 }
 
+function saveCanvas() {
+    saveCanvas("mycanvas", "png");
+}
+
 function record() {
     console.log("pressed microphone!");
     if (listening) {
@@ -433,12 +449,15 @@ function draw() {
                 translate(width / 2, height / 2);
             }
             translate(width / 2, height / 2);
-        } else if (mouseOn) {
+            return;
+        }
+        if (mouseOn) {
             if (vol > 0.03) {
                 noStroke();
                 ellipse(mouseX, mouseY, vol * 1000);
             }
-        } else if (freeOn) {
+        }
+        if (freeOn) {
             if (vol > 0.03) {
                 noStroke();
                 ellipse(random(1200), random(600), vol * 1000);
