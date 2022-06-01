@@ -3,6 +3,7 @@
 var playButton;
 var pauseButton;
 var stopButton;
+var keepRecButton;
 var song;
 var mic;
 var recButton;
@@ -107,12 +108,18 @@ function setup() {
     pauseButton = createButton("");
     pauseButton.parent("pause");
     pauseButton.class("pause");
-    pauseButton.mousePressed(/* pauseAudio */);
+    pauseButton.mousePressed(pauseAudio);
     //Stop
     stopButton = createButton("");
     stopButton.parent("stop");
     stopButton.class("stop");
     stopButton.mousePressed(stopAudio);
+
+    //keep rec button
+    keepRecButton = createButton("");
+    keepRecButton.parent("keep-recording");
+    keepRecButton.class("keep-recording");
+    keepRecButton.mousePressed(keepRecAudio);
 
     //building modes selector...
     modes = createSelect();
@@ -278,20 +285,20 @@ function modelLoaded() {
     getPitch();
 }
 
-/* function touchStarted() {
-    getAudioContext().resume();
-} */
-
-function playAudio() {
+/* function playAudio() {
     console.log("pressed play button!");
     if (!song.isPlaying()) {
         song.play();
     }
-}
+} */
+
 function pauseAudio() {
-    if (song.isPlaying()) {
-        song.pause();
+    if (listening) {
+        mic.stop();
+        listening = false;
+        return;
     }
+    mic.start();
 }
 function stopAudio() {
     if (listening) {
@@ -299,12 +306,17 @@ function stopAudio() {
         canvas.clear();
         listening = false;
     }
+}
 
-    /* if (song.isPlaying()) {
-        console.log("stop playing");
-        song.stop();
-        canvas.clear();
-    } */
+function keepRecAudio() {
+    if (!listening) {
+        userStartAudio();
+        audioContext = getAudioContext();
+        mic = new p5.AudioIn();
+        mic.start(startPitch);
+
+        listening = true;
+    }
 }
 
 function record() {
