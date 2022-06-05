@@ -3,7 +3,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        top: 30px;
+        top: 10px;
         left: 0;
         padding: 0;
         width: 300px;
@@ -105,9 +105,8 @@
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
         border: 1px solid rgba(255, 255, 255, 0.31);
-        width: 300px;
+        width: 280px;
         height: 50px;
-        visibility: hidden;
     }
 
     #on-play .playing-commands {
@@ -119,21 +118,6 @@
     .listening-animation {
         margin-right: 30px;
         color: #b0ea37;
-        /*  animation-name: listening;
-        animation-duration: 2s;
-        animation-iteration-count: infinite; */
-    }
-
-    @keyframes listening {
-        0% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.05);
-        }
-        100% {
-            transform: scale(1);
-        }
     }
 
     #pause button {
@@ -178,22 +162,24 @@
         width: 600px;
         height: 100%;
         background-image: url("./public/modal.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        /* background-size: 80%; */
         transition: right, 1s;
-        visibility: hidden;
     }
 
     .open {
-        right: 0px;
+        right: -230px;
     }
 
     .close {
-        right: -520px;
+        right: -530px;
     }
 
     #clear {
         position: absolute;
-        top: 60px;
-        right: 200px;
+        top: 80px;
+        right: 160px;
     }
 
     .clear {
@@ -207,7 +193,7 @@
     }
 
     #settings img {
-        width: 40px;
+        width: 30px;
         margin-left: 30px;
     }
 
@@ -217,13 +203,13 @@
 
         width: 450px;
         height: 700px;
-        margin-left: 30px;
+        margin-left: 20px;
     }
 
     #main-settings #toggles {
         display: flex;
         flex-direction: column;
-        margin-top: 20px;
+        margin-top: 40px;
 
         height: 120px;
     }
@@ -256,101 +242,118 @@
     #main-settings #notes {
         display: flex;
         flex-wrap: wrap;
-        align-self: center;
+        align-self: flex-start;
         justify-content: center;
         align-items: flex-start;
-        margin-top: 100px;
-        width: 450px;
+        margin-top: 50px;
+        width: 280px;
         height: 200px;
     }
 
     .tones {
-        display: flex;
-        position: absolute;
-        top: 350px;
-        width: 372px;
-        justify-content: space-between;
+        display: none;
     }
 
     .halftones {
+        display: none;
+    }
+
+    .media_notes_one {
+        display: block;
         display: flex;
         position: absolute;
-        top: 450px;
-        width: 256px;
         justify-content: space-between;
+        width: 220px;
+        top: 300px;
+    }
+    .media_notes_two {
+        display: block;
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+        width: 220px;
+        top: 370px;
+    }
+    .media_notes_three {
+        display: block;
+        display: flex;
+        position: absolute;
+        justify-content: space-between;
+        width: 220px;
+        top: 440px;
     }
 
     .a {
         width: 50px;
         height: 50px;
-        margin: 5px;
+        margin: 10px;
     }
 
     .aSharp {
         width: 50px;
         height: 50px;
-        margin: 5px;
+        margin: 10px;
     }
 
     .b {
         width: 50px;
         height: 50px;
-        margin: 5px;
+        margin: 10px;
     }
 
     .c {
         width: 50px;
         height: 50px;
-        margin: 5px;
+        margin: 10px;
     }
 
     .cSharp {
         width: 50px;
         height: 50px;
-        margin: 5px;
+        margin: 10px;
     }
 
     .d {
         width: 50px;
         height: 50px;
-        margin: 5px;
+        margin: 10px;
     }
 
     .dSharp {
         width: 50px;
         height: 50px;
 
-        margin: 5px;
+        margin: 10px;
     }
 
     .e {
         width: 50px;
         height: 50px;
-        margin: 5px;
+        margin: 10px;
     }
 
     .f {
         width: 50px;
         height: 50px;
-        margin: 5px;
+        margin: 10px;
     }
 
     .fSharp {
         width: 50px;
         height: 50px;
-        margin: 5px;
+        margin: 10px;
     }
 
     .g {
         width: 50px;
         height: 50px;
-        margin: 5px;
+        margin: 10px;
     }
 
     .gSharp {
         width: 50px;
         height: 50px;
-        margin: 5px;
+        margin: 10px;
     }
 
     footer {
