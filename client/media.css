@@ -1,0 +1,366 @@
+@media screen and (max-width: 400px) {
+    #initial-display .instructions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 30px;
+        left: 0;
+        padding: 0;
+        width: 300px;
+        height: auto;
+        position: relative;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .instructions li {
+        margin-bottom: 10px;
+        text-align: justify;
+        width: 220px;
+        font-size: 12px;
+    }
+
+    .instructions ul {
+        padding-left: 10px;
+        margin: 0;
+    }
+
+    .instructions p {
+        font-size: 12px;
+        width: 220px;
+        text-align: center;
+    }
+
+    #initial-display .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-grow: 1;
+    }
+    #initial-display .main-commands {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: auto;
+        margin-top: 30px;
+    }
+
+    .microphone {
+        border: none;
+        background-image: url("./public/micro.png");
+        background-size: contain;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 0;
+        border-radius: 120px;
+    }
+
+    #initial-display .registration-commands {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .registration-commands .items {
+        display: flex;
+    }
+
+    .photo {
+        width: 50px;
+        height: 50px;
+        margin: 0 10px 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+        background-image: url("./public/camera.png");
+        background-size: cover;
+        border: none;
+    }
+    #video {
+        border: 1px solid black;
+        width: 50px;
+        height: 50px;
+        margin: 0 10px 0 10px;
+    }
+
+    #on-play {
+        position: absolute;
+        right: 50%;
+        transform: translate(50%);
+        top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.71);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.31);
+        width: 300px;
+        height: 50px;
+        visibility: hidden;
+    }
+
+    #on-play .playing-commands {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .listening-animation {
+        margin-right: 30px;
+        color: #b0ea37;
+        /*  animation-name: listening;
+        animation-duration: 2s;
+        animation-iteration-count: infinite; */
+    }
+
+    @keyframes listening {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    #pause button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        background-image: url("./public/pause.png");
+        background-size: cover;
+        border: none;
+    }
+
+    #stop button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        background-image: url("./public/stop.png");
+        background-size: cover;
+        border: none;
+    }
+
+    #keep-recording button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-image: url("./public/keeprec.png");
+        background-size: cover;
+        border: none;
+    }
+
+    #settings {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        width: 600px;
+        height: 100%;
+        background-image: url("./public/modal.png");
+        transition: right, 1s;
+        visibility: hidden;
+    }
+
+    .open {
+        right: 0px;
+    }
+
+    .close {
+        right: -520px;
+    }
+
+    #clear {
+        position: absolute;
+        top: 60px;
+        right: 200px;
+    }
+
+    .clear {
+        background-color: transparent;
+        border: 1px solid grey;
+        font-family: "Nunito Sans", sans-serif;
+    }
+
+    #settings .open-close {
+        display: flex;
+    }
+
+    #settings img {
+        width: 40px;
+        margin-left: 30px;
+    }
+
+    #settings #main-settings {
+        display: flex;
+        flex-direction: column;
+
+        width: 450px;
+        height: 700px;
+        margin-left: 30px;
+    }
+
+    #main-settings #toggles {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+
+        height: 120px;
+    }
+
+    #toggles p {
+        font-size: 20px;
+    }
+
+    .modes {
+        font-size: 14px;
+        width: 200px;
+    }
+
+    #main-settings #palettes {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        border-top: 1px solid grey;
+        height: 120px;
+    }
+
+    .palettes {
+        font-size: 14px;
+        width: 200px;
+    }
+    #palettes p {
+        font-size: 20px;
+    }
+
+    #main-settings #notes {
+        display: flex;
+        flex-wrap: wrap;
+        align-self: center;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 100px;
+        width: 450px;
+        height: 200px;
+    }
+
+    .tones {
+        display: flex;
+        position: absolute;
+        top: 350px;
+        width: 372px;
+        justify-content: space-between;
+    }
+
+    .halftones {
+        display: flex;
+        position: absolute;
+        top: 450px;
+        width: 256px;
+        justify-content: space-between;
+    }
+
+    .a {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .aSharp {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .b {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .c {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .cSharp {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .d {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .dSharp {
+        width: 50px;
+        height: 50px;
+
+        margin: 5px;
+    }
+
+    .e {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .f {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .fSharp {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .g {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    .gSharp {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        height: 40px;
+    }
+
+    footer p {
+        margin-left: 10px;
+        font-size: 10px;
+    }
+}

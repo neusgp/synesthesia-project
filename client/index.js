@@ -10,6 +10,8 @@
     const pause = document.querySelector("#pause");
     const instructions = document.querySelector(".instructions");
     const clear = document.querySelector("#clear");
+    const onPlay = document.querySelector("#on-play");
+    const photo = document.querySelector("#photo");
 
     micro.addEventListener("click", function () {
         commands.classList.add("fadeout");
@@ -20,6 +22,10 @@
         instructions.classList.add("fadeout");
         clear.classList.remove("fadeout");
         clear.classList.add("fadein");
+        onPlay.classList.remove("fadeout");
+        onPlay.classList.add("fadein");
+        photo.classList.remove("fadeout");
+        photo.classList.add("fadein");
     });
 
     play.addEventListener("click", function () {
@@ -36,6 +42,10 @@
         instructions.classList.toggle("fadeout");
         clear.classList.remove("fadein");
         clear.classList.add("fadeout");
+        onPlay.classList.remove("fadein");
+        onPlay.classList.add("fadeout");
+        photo.classList.remove("fadein");
+        photo.classList.add("fadeout");
     });
 
     pause.addEventListener("click", function () {
