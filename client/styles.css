@@ -219,8 +219,9 @@ h1 {
 
 #clear {
     position: absolute;
-    top: 60px;
-    right: 200px;
+    top: 10%;
+    right: 14%;
+    background-color: white;
 }
 
 .clear {
