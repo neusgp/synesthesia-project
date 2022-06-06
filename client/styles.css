@@ -17,7 +17,7 @@ body {
     background-color: magenta; */
     z-index: -1;
     left: 50%;
-    top: 40px;
+    top: 8%;
     transform: translate(-50%);
 }
 
@@ -31,19 +31,18 @@ body {
 
 #initial-display .instructions {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    top: 30px;
-    left: 80px;
-    padding: 40px;
+    top: 8%;
+    left: 5%;
+    padding: 3%;
     background: rgba(255, 255, 255, 0.71);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.31);
-    width: 300px;
-    height: auto;
-    width: 400px;
+    width: 27%;
     position: absolute;
 }
 
@@ -53,14 +52,13 @@ h1 {
 }
 
 .instructions li {
-    /* list-style: none; */
-    margin-bottom: 20px;
+    margin-bottom: 4%;
     text-align: justify;
-    width: 280px;
+    width: 88%;
 }
 
 .instructions ul {
-    padding-left: 30px;
+    padding-left: 10%;
     margin: 0;
 }
 
@@ -75,9 +73,6 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    width: 550px;
-    height: 350px;
     transition: visibility 0s linear 300ms, opacity 300ms;
 }
 
@@ -89,12 +84,7 @@ h1 {
     height: 200px;
     margin-bottom: 0;
     border-radius: 120px;
-    /* margin-bottom: 60px; */
 }
-
-/* .play {
-
-} */
 
 @keyframes fadein {
     0% {
@@ -135,33 +125,24 @@ h1 {
 }
 
 .photo {
-    /* border: 1px solid black; */
     width: 50px;
     height: 50px;
-    margin: 0 10px 0 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
     background-image: url("./public/camera.png");
     background-size: cover;
     border: none;
-}
-#video {
-    border: 1px solid black;
-    width: 50px;
-    height: 50px;
-    margin: 0 10px 0 10px;
 }
 
 #on-play {
     position: absolute;
     right: 50%;
     transform: translate(50%);
-    top: 20px;
+    top: 3%;
     display: flex;
+    flex-wrap: wrap;
+    width: 24%;
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.71);
@@ -170,34 +151,18 @@ h1 {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.31);
-    width: 300px;
-    height: 50px;
 }
 
 #on-play .playing-commands {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    width: 80%;
 }
 
 .listening-animation {
-    margin-right: 30px;
+    margin-right: 8%;
     color: #b0ea37;
-    /*  animation-name: listening;
-    animation-duration: 2s;
-    animation-iteration-count: infinite; */
-}
-
-@keyframes listening {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
 }
 
 #pause button {
@@ -206,7 +171,6 @@ h1 {
     justify-content: center;
     width: 40px;
     height: 40px;
-    margin-right: 10px;
     background-image: url("./public/pause.png");
     background-size: cover;
     border: none;
@@ -218,7 +182,6 @@ h1 {
     justify-content: center;
     width: 40px;
     height: 40px;
-    margin-right: 10px;
     background-image: url("./public/stop.png");
     background-size: cover;
     border: none;
@@ -242,6 +205,7 @@ h1 {
     width: 600px;
     height: 100%;
     background-image: url("./public/modal.png");
+    background-position: 50%;
     transition: right, 1s;
 }
 
@@ -271,24 +235,21 @@ h1 {
 
 #settings img {
     width: 40px;
-    margin-left: 30px;
+    margin-left: 80%;
 }
 
 #settings #main-settings {
     display: flex;
     flex-direction: column;
-
-    width: 450px;
-    height: 700px;
-    margin-left: 30px;
+    margin-left: 10%;
 }
 
 #main-settings #toggles {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    margin-top: 20px;
-
-    height: 120px;
+    margin-top: 8%;
+    margin-bottom: 8%;
 }
 
 #toggles p {
@@ -297,20 +258,20 @@ h1 {
 
 .modes {
     font-size: 14px;
-    width: 200px;
+    width: 60%;
 }
 
 #main-settings #palettes {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 8%;
     border-top: 1px solid grey;
-    height: 120px;
+    margin-bottom: 8%;
 }
 
 .palettes {
     font-size: 14px;
-    width: 200px;
+    width: 60%;
 }
 #palettes p {
     font-size: 20px;
@@ -322,24 +283,23 @@ h1 {
     align-self: center;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 100px;
-    width: 450px;
-    height: 200px;
+    margin-top: 10%;
+    width: 90%;
 }
 
 .tones {
     display: flex;
     position: absolute;
-    top: 350px;
-    width: 372px;
+    top: 60%;
+    width: 60%;
     justify-content: space-between;
 }
 
 .halftones {
     display: flex;
     position: absolute;
-    top: 450px;
-    width: 256px;
+    top: 75%;
+    width: 44%;
     justify-content: space-between;
 }
 
@@ -356,74 +316,73 @@ h1 {
 .a {
     width: 50px;
     height: 50px;
-    margin: 5px;
+    margin: 1%;
 }
 
 .aSharp {
     width: 50px;
     height: 50px;
-    margin: 5px;
+    margin: 10% 1% 1% 1%;
 }
 
 .b {
     width: 50px;
     height: 50px;
-    margin: 5px;
+    margin: 1%;
 }
 
 .c {
     width: 50px;
     height: 50px;
-    margin: 5px;
+    margin: 1%;
 }
 
 .cSharp {
     width: 50px;
     height: 50px;
-    margin: 5px;
+    margin: 10% 1% 1% 1%;
 }
 
 .d {
     width: 50px;
     height: 50px;
-    margin: 5px;
+    margin: 1%;
 }
 
 .dSharp {
     width: 50px;
     height: 50px;
-
-    margin: 5px;
+    margin: 10% 1% 1% 1%;
 }
 
 .e {
     width: 50px;
     height: 50px;
-    margin: 5px;
+    margin: 1%;
 }
 
 .f {
     width: 50px;
     height: 50px;
-    margin: 5px;
+    margin: 1%;
 }
 
 .fSharp {
     width: 50px;
     height: 50px;
-    margin: 5px;
+    margin: 10% 1% 1% 1%;
 }
 
 .g {
     width: 50px;
     height: 50px;
-    margin: 5px;
+    margin: 1%;
 }
 
 .gSharp {
     width: 50px;
     height: 50px;
-    margin: 5px;
+    margin: 10% 1% 1% 1%;
 }
 
 footer {
