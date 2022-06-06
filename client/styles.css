@@ -221,11 +221,10 @@ h1 {
     position: absolute;
     top: 10%;
     right: 14%;
-    background-color: white;
 }
 
 .clear {
-    background-color: transparent;
+    background-color: white;
     border: 1px solid grey;
     font-family: "Nunito Sans", sans-serif;
 }
