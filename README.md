@@ -1,0 +1,1 @@
+This project is inspired by the concep of synesthesia. Also in netlify: https://synesthesia-neus.netlify.app/
