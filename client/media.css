@@ -1,9 +1,4 @@
 @media screen and (max-width: 400px) {
-    body {
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
-
     #initial-display .instructions {
         display: flex;
         flex-direction: column;
