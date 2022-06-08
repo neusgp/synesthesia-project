@@ -1,4 +1,4 @@
-/* import { setKandinsky, setEllington } from "./palettes.js"; */
+
 
 var playButton;
 var pauseButton;
@@ -79,15 +79,6 @@ function setup() {
     canvas.parent("canvas");
 
     background(255);
-
-    /*     cols = floor(width / scl);
-    rows = floor(height / scl);
-
-    for (var i = 0; i < 100; i++) {
-        particles[i] = new Particle();
-    } */
-
-    /* background(200); */
 
     console.log("colors", colors);
 
