@@ -1,5 +1,5 @@
 # IMPORTANT!
-This version of the app is currently not working because the scripts to the p5, p5.sound and ml5 are outdated. I wanted to refresh the code a bit as well, so I decided to re-do the app using React. You can already see the first deployment here: https://synesthesia-react.vercel.app/. And also the repository where I am uploading the code: https://github.com/neusgp/synesthesia-react. 
+This version of the app is currently not working because the scripts to the p5, p5.sound and ml5 libraries are outdated. I wanted to refresh the code a bit as well, so I decided to re-do the app using React. You can already see the first deployment here: https://synesthesia-react.vercel.app/. And also the repository where I am uploading the code: https://github.com/neusgp/synesthesia-react. 
 
 # SYNESTHESIA (2022)
 ![2022-08-01 (1)](https://user-images.githubusercontent.com/96746116/182108813-0f63cea2-56d6-4779-9c2d-1fac71bc0788.png)
